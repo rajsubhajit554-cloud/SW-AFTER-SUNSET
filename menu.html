@@ -1,0 +1,2347 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu Card | AFTER SUNSET| সম্পূর্ণ মেনু</title>
+    
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="Explore the full digital menu of AFTER SUNSET. Bengali Thalis, Snacks, Tea, Coffee, Extras & Direct WhatsApp Ordering.">
+    <meta name="theme-color" content="#c9a24b">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Style -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific Styles for Compact Full Menu Page */
+        .full-menu-page {
+            background-color: #0c0c0c;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Sticky Top Header Container (Nav + Hero + Search + Category Filter Tabs) */
+        .sticky-menu-top-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 13, 13, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1.5px solid rgba(201, 162, 75, 0.28);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+        }
+
+        .full-menu-nav {
+            padding: 8px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .full-menu-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 162, 75, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 5px 14px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.84rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-back-btn:hover {
+            background: var(--accent-gold);
+            color: #121212;
+            transform: translateX(-3px);
+            box-shadow: 0 0 15px rgba(201, 162, 75, 0.5);
+        }
+
+        .full-menu-logo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .full-menu-logo-title span {
+            color: var(--accent-gold);
+        }
+
+        .full-menu-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-timing-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(201, 162, 75, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 5px 12px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-timing-btn:hover {
+            background: var(--accent-gold);
+            color: #121212;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(201, 162, 75, 0.5);
+        }
+
+        .nav-call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            color: #121212;
+            padding: 5px 14px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(201, 162, 75, 0.5);
+        }
+
+        /* Full Menu Hero Header (Enlarged & Prominent) */
+        .full-menu-hero {
+            text-align: center;
+            padding: 14px 20px 10px;
+            position: relative;
+        }
+
+        .full-menu-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0;
+            line-height: 1.25;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .full-menu-hero h1 .bengali-heading {
+            color: var(--accent-gold);
+            display: inline-block;
+            font-size: 1.85rem;
+            margin-left: 14px;
+            font-family: 'Tiro Bangla', serif;
+            font-weight: 700;
+            text-shadow: 0 0 16px rgba(201, 162, 75, 0.45);
+        }
+
+        .full-menu-hero p {
+            display: none;
+        }
+
+        /* Search & Filter Controls (Spacious & Longer) */
+        .menu-control-bar {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 10px 20px 15px;
+        }
+
+        .search-box-wrapper {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .search-box-wrapper input {
+            width: 100%;
+            background: rgba(24, 24, 24, 0.96);
+            border: 1.5px solid rgba(201, 162, 75, 0.35);
+            padding: 12px 20px 12px 48px;
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 0.98rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .search-box-wrapper input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(201, 162, 75, 0.45);
+            background: rgba(32, 32, 32, 0.98);
+        }
+
+        .search-box-wrapper i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .menu-category-tabs {
+            touch-action: pan-x pan-y;
+            overscroll-behavior-x: contain;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .menu-tab-btn {
+            background: rgba(30, 30, 30, 0.75);
+            border: 1.5px solid rgba(201, 162, 75, 0.28);
+            color: #e0e0e0;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-tab-btn i {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-tab-btn:hover {
+            border-color: var(--accent-gold);
+            color: #ffffff;
+            background: rgba(201, 162, 75, 0.18);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(201, 162, 75, 0.25);
+        }
+
+        .menu-tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            border-color: #ffd700;
+            color: #121212;
+            box-shadow: 0 3px 14px rgba(201, 162, 75, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .menu-tab-btn.active i {
+            color: #121212;
+        }
+
+        /* Compact Grid for Full Menu */
+        .compact-menu-grid-container {
+            max-width: 1200px;
+            margin: 20px auto 50px;
+            padding: 0 15px;
+        }
+
+        .compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        /* Food Card styles matching index.html */
+        .compact-grid .food-menu-card {
+            flex: initial;
+            width: 100%;
+            animation: floatMenuItem 4.5s ease-in-out infinite alternate;
+        }
+
+        .compact-grid .food-menu-card.hidden {
+            display: none !important;
+        }
+
+        /* No Results Message */
+        #no-results-msg {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            display: none;
+            grid-column: 1 / -1;
+        }
+
+        /* Floating Order Quick Dial */
+        .floating-order-btn {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            transition: all 0.3s ease;
+            animation: pulseOrderBtn 2.5s infinite;
+        }
+
+        .floating-order-btn:hover {
+            background: #1ebc59;
+            transform: scale(1.06);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.65);
+        }
+
+        @keyframes pulseOrderBtn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @media (max-width: 600px) {
+            .full-menu-nav {
+                padding: 8px 12px;
+            }
+            .nav-back-btn span {
+                display: none;
+            }
+            .full-menu-logo-title {
+                font-size: 1.05rem;
+            }
+            .nav-timing-btn {
+                padding: 4px 8px;
+                font-size: 0.76rem;
+            }
+            .nav-timing-btn span {
+                display: none;
+            }
+            .nav-call-btn {
+                padding: 4px 10px;
+                font-size: 0.76rem;
+            }
+            .full-menu-hero {
+                padding: 10px 10px 4px;
+            }
+            .full-menu-hero h1 {
+                font-size: 1.65rem;
+            }
+            .full-menu-hero h1 .bengali-heading {
+                font-size: 1.35rem;
+                display: block;
+                margin-left: 0;
+                margin-top: 4px;
+            }
+            .menu-control-bar {
+                padding: 6px 12px 10px;
+            }
+            .search-box-wrapper {
+                margin-bottom: 8px;
+            }
+            .search-box-wrapper input {
+                padding: 9px 16px 9px 38px;
+                font-size: 0.88rem;
+                border-radius: 25px;
+            }
+            .search-box-wrapper i {
+                left: 14px;
+                font-size: 0.95rem;
+            }
+            .menu-category-tabs {
+            touch-action: pan-x pan-y;
+            overscroll-behavior-x: contain;
+                gap: 6px;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-bottom: 4px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .menu-tab-btn {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+                border-radius: 20px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .compact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .compact-grid .food-menu-card {
+                padding: 8px;
+            }
+            .food-title {
+                font-size: 0.86rem;
+            }
+            .bengali-title {
+                font-size: 0.72rem;
+            }
+            .food-price {
+                font-size: 0.95rem;
+            }
+            .food-order-btn {
+                padding: 5px 8px;
+                font-size: 0.72rem;
+            }
+        }
+    </style>
+</head>
+<body class="full-menu-page">
+
+    <!-- Sticky Top Header (Navbar + Hero Title + Search Box + Filter Tabs) -->
+    <div class="sticky-menu-top-container">
+        <!-- Top Navigation Bar -->
+        <nav class="full-menu-nav">
+            <div class="full-menu-nav-left">
+                <a href="index.html" class="nav-back-btn" title="Go back to Home Page">
+                    <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+                </a>
+                <div class="full-menu-logo-title">
+                    AJ Restaurant <span>& Cafe</span>
+                </div>
+            </div>
+            <div class="full-menu-nav-right">
+                <a href="#order-timings" class="nav-timing-btn" id="nav-timing-toggle-btn" title="Order Timings (অর্ডার সময়সূচী)">
+                    <i class="fas fa-clock" id="nav-timing-icon"></i> <span id="nav-timing-text">Timings</span>
+                </a>
+                <a href="tel:6295982636" class="nav-call-btn">
+                    <i class="fas fa-phone-alt"></i> <span>6295982636</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Header -->
+        <header class="full-menu-hero">
+            <h1>Complete Menu Card <span class="bengali-heading">আমাদের সম্পূর্ণ ডিজিটাল মেনু</span></h1>
+        </header>
+
+        <!-- Search Bar & Category Filter Tabs -->
+        <div class="menu-control-bar">
+            <div class="search-box-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="menu-search-input" placeholder="খাবারের নাম লিখে খুঁজুন (Search dishes...)" autocomplete="off">
+            </div>
+
+            <div class="menu-category-tabs">
+            <button class="menu-tab-btn active" data-category="all">
+                <i class="fas fa-utensils"></i> All Items
+            </button>
+            <button class="menu-tab-btn" data-category="snacks">
+                <i class="fas fa-drumstick-bite"></i> Snacks & Starters
+            </button>
+            <button class="menu-tab-btn" data-category="thali">
+                <i class="fas fa-bowl-rice"></i> Bengali Thali
+            </button>
+            <button class="menu-tab-btn" data-category="rice">
+                <i class="fas fa-bowl-food"></i> Rice & Biryani
+            </button>
+            <button class="menu-tab-btn" data-category="chicken">
+                <i class="fas fa-drumstick-bite"></i> Indian Chicken
+            </button>
+            <button class="menu-tab-btn" data-category="mutton">
+                <i class="fas fa-bacon"></i> Indian Mutton
+            </button>
+            <button class="menu-tab-btn" data-category="fish">
+                <i class="fas fa-fish"></i> Fish Items
+            </button>
+            <button class="menu-tab-btn" data-category="paneer">
+                <i class="fas fa-cheese"></i> Paneer Dishes
+            </button>
+            <button class="menu-tab-btn" data-category="tandoor">
+                <i class="fas fa-fire"></i> Tandoor & Roti
+            </button>
+            <button class="menu-tab-btn" data-category="combos">
+                <i class="fas fa-boxes-stacked"></i> Special Combos
+            </button>
+            <button class="menu-tab-btn" data-category="chinese">
+                <i class="fas fa-bowl-food"></i> Chinese & Noodles
+            </button>
+            <button class="menu-tab-btn" data-category="dessert">
+                <i class="fas fa-ice-cream"></i> Ice Cream & Desserts
+            </button>
+            <button class="menu-tab-btn" data-category="beverages">
+                <i class="fas fa-cocktail"></i> Mocktails & Drinks
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compact Full Menu Grid -->
+    <main class="compact-menu-grid-container">
+        <div class="compact-grid" id="full-menu-grid">
+            <!-- 1. Chicken Finger (5 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken finger crispy fried snack 5 pcs non veg">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_finger.png" alt="Chicken Finger (5 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Finger (5 Pcs)</h3>
+                    <span class="bengali-title">চিকেন ফিঙ্গার (৫ পিস)</span>
+                    <span class="food-price">&#8377;129</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Finger%20(5%20Pcs)%20(%E2%82%B9129)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 2. Chicken Kasturi Dry (10 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken kasturi dry 10 pcs kabab dry roasted">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_kasturi_dry.png" alt="Chicken Kasturi Dry (10 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Kasturi Dry (10 Pcs)</h3>
+                    <span class="bengali-title">চিকেন কস্তুরী ড্রাই (১০ পিস)</span>
+                    <span class="food-price">&#8377;219</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Kasturi%20Dry%20(10%20Pcs)%20(%E2%82%B9219)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 3. Chicken Lollipop (5 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken lollipop 5 pcs crispy fried chicken drumettes">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_lollipop.png" alt="Chicken Lollipop (5 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Lollipop (5 Pcs)</h3>
+                    <span class="bengali-title">চিকেন ললিপপ (৫ পিস)</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Lollipop%20(5%20Pcs)%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 4. Chicken Ghee Roast (10 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken ghee roast 10 pcs rich desi ghee roasted">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_ghee_roast.png" alt="Chicken Ghee Roast (10 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Ghee Roast (10 Pcs)</h3>
+                    <span class="bengali-title">চিকেন ঘি রোস্ট (১০ পিস)</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Ghee%20Roast%20(10%20Pcs)%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 5. Fish Finger (5 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="fish finger 5 pcs bhetki fish crispy crumb fried">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_fish_finger.png" alt="Fish Finger (5 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Finger (5 Pcs)</h3>
+                    <span class="bengali-title">ফিশ ফিঙ্গার (৫ পিস)</span>
+                    <span class="food-price">&#8377;189</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Fish%20Finger%20(5%20Pcs)%20(%E2%82%B9189)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 6. Fish Fry (1 Pc) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="fish fry 1 pc kolkata style fish cutlet bhetki">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_fish_fry.png" alt="Fish Fry (1 Pc)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Fry (1 Pc)</h3>
+                    <span class="bengali-title">স্পেশাল ফিশ ফ্রাই (১ পিস)</span>
+                    <span class="food-price">&#8377;109</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Fish%20Fry%20(1%20Pc)%20(%E2%82%B9109)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 7. Hongkong Chicken Dry (6 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="hongkong chicken dry 6 pcs chinese starter">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_hongkong_chicken_dry.png" alt="Hongkong Chicken Dry (6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Hongkong Chicken Dry (6 Pcs)</h3>
+                    <span class="bengali-title">হংকং চিকেন ড্রাই (৬ পিস)</span>
+                    <span class="food-price">&#8377;199</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Hongkong%20Chicken%20Dry%20(6%20Pcs)%20(%E2%82%B9199)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 8. Dragon Chicken -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="dragon chicken spicy crispy chinese starter sauce">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_dragon_chicken.png" alt="Dragon Chicken" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Dragon Chicken</h3>
+                    <span class="bengali-title">ড্রাগন চিকেন</span>
+                    <span class="food-price">&#8377;229</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Dragon%20Chicken%20(%E2%82%B9229)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 9. Pepper Chicken (6 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="pepper chicken papper chicken black pepper 6 pcs">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_pepper_chicken.png" alt="Pepper Chicken (6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Pepper Chicken (6 Pcs)</h3>
+                    <span class="bengali-title">পেপার চিকেন (৬ পিস)</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Pepper%20Chicken%20(6%20Pcs)%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 10. Chilli Chicken Dry (6 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chilli chicken dry 6 pcs hot spicy dry chinese starter">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_chicken_dry.png" alt="Chilli Chicken Dry (6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Chicken Dry (6 Pcs)</h3>
+                    <span class="bengali-title">চিলি চিকেন ড্রাই (৬ পিস)</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Chicken%20Dry%20(6%20Pcs)%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 11. Chicken 65 (6 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken 65 south indian crispy spicy fried 6 pcs">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_65.png" alt="Chicken 65 (6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken 65 (6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন ৬৫ (৬ পিস)</span>
+                    <span class="food-price">&#8377;169</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%2065%20(6%20Pcs)%20(%E2%82%B9169)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 12. Crispy Chicken -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="crispy chicken crunchy golden fried chicken strips">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_crispy_chicken.png" alt="Crispy Chicken" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Crispy Chicken</h3>
+                    <span class="bengali-title">ক্রিস্পি চিকেন</span>
+                    <span class="food-price">&#8377;169</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Crispy%20Chicken%20(%E2%82%B9169)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 13. French Fries -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="french fries crispy potato fries salted">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_french_fries.png" alt="French Fries" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">French Fries</h3>
+                    <span class="bengali-title">ফ্রেঞ্চ ফ্রাই</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20French%20Fries%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 14. Crispy Baby Corn -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="crispy baby corn golden fried babycorn starter">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_crispy_baby_corn.png" alt="Crispy Baby Corn" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Crispy Baby Corn</h3>
+                    <span class="bengali-title">ক্রিস্পি বেবিকর্ন</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Crispy%20Baby%20Corn%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 15. Chilli Mushroom -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chilli mushroom spicy dry mushroom starter">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_mushroom.png" alt="Chilli Mushroom" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Mushroom</h3>
+                    <span class="bengali-title">চিলি মাশরুম</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Mushroom%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 16. Chilli Paneer Dry -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chilli paneer dry cottage cheese spicy chinese">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_paneer_dry.png" alt="Chilli Paneer Dry" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Paneer Dry</h3>
+                    <span class="bengali-title">চিলি পনির ড্রাই</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Paneer%20Dry%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 17. Paneer Pakora -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="paneer pakora panner pakara hot crispy snacks">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_pakora.png" alt="Paneer Pakora" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Pakora</h3>
+                    <span class="bengali-title">পনির পকোড়া</span>
+                    <span class="food-price">&#8377;129</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Pakora%20(%E2%82%B9129)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 18. Honey Garlic Cauliflower -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="honey garlic cauliflower sweet spicy gobi starter">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_honey_garlic_cauliflower.png" alt="Honey Garlic Cauliflower" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Honey Garlic Cauliflower</h3>
+                    <span class="bengali-title">হানি গার্লিক ফুলকপি</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Honey%20Garlic%20Cauliflower%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 19. Veg Chilli Gobi -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="veg chilli gobi crispy cauliflower chinese">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_veg_chilli_gobi.png" alt="Veg Chilli Gobi" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Chilli Gobi</h3>
+                    <span class="bengali-title">ভেজ চিলি গোবি</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Veg%20Chilli%20Gobi%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 20. Paneer Cheese Balls (8 Pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="paneer cheese balls 8 pcs melting cheese stuffed">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_cheese_balls.png" alt="Paneer Cheese Balls (8 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Cheese Balls (8 Pcs)</h3>
+                    <span class="bengali-title">পনির চিজ বল (৮ পিস)</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Cheese%20Balls%20(8%20Pcs)%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 21. Honey Chilli Potato -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="honey chilli potato sweet spicy crispy sesame potato">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_honey_chilli_potato.png" alt="Honey Chilli Potato" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Honey Chilli Potato</h3>
+                    <span class="bengali-title">হানি চিলি পটেটো</span>
+                    <span class="food-price">&#8377;139</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Honey%20Chilli%20Potato%20(%E2%82%B9139)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 22. Chilli Potato -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chilli potato spicy potato fingers">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_potato.png" alt="Chilli Potato" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Potato</h3>
+                    <span class="bengali-title">চিলি পটেটো</span>
+                    <span class="food-price">&#8377;129</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Potato%20(%E2%82%B9129)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 23. Crispy Honey Babycorn -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="crispy honey babycorn sweet spicy glazed baby corn">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_crispy_honey_babycorn.png" alt="Crispy Honey Babycorn" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Crispy Honey Babycorn</h3>
+                    <span class="bengali-title">ক্রিস্পি হানি বেবিকর্ন</span>
+                    <span class="food-price">&#8377;169</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Crispy%20Honey%20Babycorn%20(%E2%82%B9169)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 24. Mushroom Salt and Pepper -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="mushroom salt and pepper solt paper crispy tossed">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mushroom_salt_and_pepper.png" alt="Mushroom Salt and Pepper" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mushroom Salt and Pepper</h3>
+                    <span class="bengali-title">মাশরুম সল্ট অ্যান্ড পেপার</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mushroom%20Salt%20and%20Pepper%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 25. Fish Schezwan -->
+            <div class="food-menu-card" data-category="fish" data-keywords="fish schezwan spicy schezwan sauce fish gravy">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_fish_schezwan.png" alt="Fish Schezwan" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Schezwan</h3>
+                    <span class="bengali-title">ফিশ সেজুয়ান</span>
+                    <span class="food-price">&#8377;229</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Fish%20Schezwan%20(%E2%82%B9229)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 26. Hot Garlic Fish -->
+            <div class="food-menu-card" data-category="fish" data-keywords="hot garlic fish spicy garlic sauce tender fish">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_hot_garlic_fish.png" alt="Hot Garlic Fish" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Hot Garlic Fish</h3>
+                    <span class="bengali-title">হট গার্লিক ফিশ</span>
+                    <span class="food-price">&#8377;239</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Hot%20Garlic%20Fish%20(%E2%82%B9239)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 27. Chilli Garlic Fish -->
+            <div class="food-menu-card" data-category="fish" data-keywords="chilli garlic fish hot fish starter gravy">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_garlic_fish.png" alt="Chilli Garlic Fish" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Garlic Fish</h3>
+                    <span class="bengali-title">চিলি গার্লিক ফিশ</span>
+                    <span class="food-price">&#8377;259</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Garlic%20Fish%20(%E2%82%B9259)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 28. Chilli Fish -->
+            <div class="food-menu-card" data-category="fish" data-keywords="chilli fish boneless fish cubes spicy chinese">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_fish.png" alt="Chilli Fish" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Fish</h3>
+                    <span class="bengali-title">চিলি ফিশ</span>
+                    <span class="food-price">&#8377;249</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Fish%20(%E2%82%B9249)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 29. Fish Manchurian -->
+            <div class="food-menu-card" data-category="fish" data-keywords="fish manchurian authentic chinese fish gravy">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_fish_manchurian.png" alt="Fish Manchurian" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Manchurian</h3>
+                    <span class="bengali-title">ফিশ মাঞ্চুরিয়ান</span>
+                    <span class="food-price">&#8377;219</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Fish%20Manchurian%20(%E2%82%B9219)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 30. Roasted Chicken Tandoori (1 Leg) -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="roasted chicken tandoori one leg tandoori leg piece">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_roasted_chicken_tandoori_1leg.png" alt="Roasted Chicken Tandoori (1 Leg)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Roasted Chicken Tandoori (1 Leg)</h3>
+                    <span class="bengali-title">চিকেন তন্দুরি (১ লেগ)</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Roasted%20Chicken%20Tandoori%20(1%20Leg)%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 31. Roasted Chicken Tandoori (4 Legs) -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="roasted chicken tandoori four legs full platter">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_roasted_chicken_tandoori_4leg.png" alt="Roasted Chicken Tandoori (4 Legs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Roasted Chicken Tandoori (4 Legs)</h3>
+                    <span class="bengali-title">চিকেন তন্দুরি (৪ লেগ)</span>
+                    <span class="food-price">&#8377;599</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Roasted%20Chicken%20Tandoori%20(4%20Legs)%20(%E2%82%B9599)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 32. Chicken Kabab -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="chicken kabab grilled smoky juicy kabab tandoori">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_kabab.png" alt="Chicken Kabab" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Kabab</h3>
+                    <span class="bengali-title">চিকেন কাবাব</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Kabab%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 33. Tandoori Roti -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="tandori roti tandoori roti clay oven wheat roti">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_tandoori_roti.png" alt="Tandoori Roti" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Tandoori Roti</h3>
+                    <span class="bengali-title">তন্দুরি রুটি</span>
+                    <span class="food-price">&#8377;20</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Tandoori%20Roti%20(%E2%82%B920)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 34. Naan -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="naan plain naan tandoori flatbread">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_naan.png" alt="Naan" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Naan</h3>
+                    <span class="bengali-title">প্লেইন নান</span>
+                    <span class="food-price">&#8377;39</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Naan%20(%E2%82%B939)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 35. Garlic Naan -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="garlic naan fresh garlic roasted naan bread">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_garlic_naan.png" alt="Garlic Naan" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Garlic Naan</h3>
+                    <span class="bengali-title">গার্লিক নান</span>
+                    <span class="food-price">&#8377;45</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Garlic%20Naan%20(%E2%82%B945)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 36. Butter Naan -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="butter naan amul butter glazed naan tandoori">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_butter_naan.png" alt="Butter Naan" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Butter Naan</h3>
+                    <span class="bengali-title">বাটার নান</span>
+                    <span class="food-price">&#8377;49</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Butter%20Naan%20(%E2%82%B949)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 37. Garlic Butter Naan -->
+            <div class="food-menu-card" data-category="tandoor" data-keywords="garlic butter naan rich butter garlic bread">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_garlic_butter_naan.png" alt="Garlic Butter Naan" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Garlic Butter Naan</h3>
+                    <span class="bengali-title">গার্লিক বাটার নান</span>
+                    <span class="food-price">&#8377;55</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Garlic%20Butter%20Naan%20(%E2%82%B955)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 38. Chicken Biryani -->
+            <div class="food-menu-card" data-category="rice" data-keywords="chicken biryani dum biryani aromatic rice egg potato">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_biryani.png" alt="Chicken Biryani" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Biryani</h3>
+                    <span class="bengali-title">চিকেন বিরিয়ানি</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Biryani%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 39. Basanti Pulao -->
+            <div class="food-menu-card" data-category="rice" data-keywords="basanti pulao sweet yellow bengali pulao kaju kishmish">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_basanti_pulao.png" alt="Basanti Pulao" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Basanti Pulao</h3>
+                    <span class="bengali-title">বাসন্তী পোলাও</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Basanti%20Pulao%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 40. Pulao (Bengali Fried Rice) -->
+            <div class="food-menu-card" data-category="rice" data-keywords="pulao bengoli fridrice bengali fried rice ghee rice">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_pulao_bengali_fried_rice.png" alt="Pulao (Bengali Fried Rice)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Pulao (Bengali Fried Rice)</h3>
+                    <span class="bengali-title">পোলাও (বাঙালি ফ্রায়েড রাইস)</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Pulao%20(Bengali%20Fried%20Rice)%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 41. Steam Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="steam rice plain boiled basmati rice">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_steam_rice.png" alt="Steam Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Steam Rice</h3>
+                    <span class="bengali-title">স্টিম রাইস</span>
+                    <span class="food-price">&#8377;49</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Steam%20Rice%20(%E2%82%B949)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 42. Jeera Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="jeera rice cumin flavored basmati rice">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_jeera_rice.png" alt="Jeera Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Jeera Rice</h3>
+                    <span class="bengali-title">জিরা রাইস</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Jeera%20Rice%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 43. Egg Mutton Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="egg mutton fried rice rich mutton keema chunks">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_egg_mutton_fried_rice.png" alt="Egg Mutton Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Mutton Fried Rice</h3>
+                    <span class="bengali-title">এগ মাটন ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Egg%20Mutton%20Fried%20Rice%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 44. Schezwan Chicken Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="schezwan chicken fried rice spicy hot wok fried">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_schezwan_chicken_fried_rice.png" alt="Schezwan Chicken Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Schezwan Chicken Fried Rice</h3>
+                    <span class="bengali-title">সেজুয়ান চিকেন ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Schezwan%20Chicken%20Fried%20Rice%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 45. Chicken Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="chicken fried rice classic chinese rice">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_fried_rice.png" alt="Chicken Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Fried Rice</h3>
+                    <span class="bengali-title">চিকেন ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Fried%20Rice%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 46. Egg Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="egg fried rice fluffy egg scrambled rice">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_egg_fried_rice.png" alt="Egg Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Fried Rice</h3>
+                    <span class="bengali-title">এগ ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;139</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Egg%20Fried%20Rice%20(%E2%82%B9139)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 47. Chicken Hongkong Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="chicken hongkong fried rice hongkong style wok rice">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_hongkong_fried_rice.png" alt="Chicken Hongkong Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Hongkong Fried Rice</h3>
+                    <span class="bengali-title">চিকেন হংকং ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Hongkong%20Fried%20Rice%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 48. Mix Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="mix fried rice chicken egg prawn veg mixed rice">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mix_fried_rice.png" alt="Mix Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mix Fried Rice</h3>
+                    <span class="bengali-title">মিক্স ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mix%20Fried%20Rice%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 49. Chicken Singapuri Fried Rice -->
+            <div class="food-menu-card" data-category="rice" data-keywords="chicken singapuri fried rice yellow curry flavor">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_singapuri_fried_rice.png" alt="Chicken Singapuri Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Singapuri Fried Rice</h3>
+                    <span class="bengali-title">চিকেন সিঙ্গাপুরি ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Singapuri%20Fried%20Rice%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 50. Mutton Handi (Half - 3 Pcs) -->
+            <div class="food-menu-card" data-category="mutton" data-keywords="mutton handi half 3 pcs claypot mutton gravy">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_handi.png" alt="Mutton Handi (Half - 3 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Handi (Half - 3 Pcs)</h3>
+                    <span class="bengali-title">মাটন হান্ডি (হাফ - ৩ পিস)</span>
+                    <span class="food-price">&#8377;319</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Handi%20(Half%20-%203%20Pcs)%20(%E2%82%B9319)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 51. Mutton Handi (Full - 6 Pcs) -->
+            <div class="food-menu-card" data-category="mutton" data-keywords="mutton handi full 6 pcs handi gosht">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_handi.png" alt="Mutton Handi (Full - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Handi (Full - 6 Pcs)</h3>
+                    <span class="bengali-title">মাটন হান্ডি (ফুল - ৬ পিস)</span>
+                    <span class="food-price">&#8377;629</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Handi%20(Full%20-%206%20Pcs)%20(%E2%82%B9629)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 52. Mutton Malvani (Half - 3 Pcs) -->
+            <div class="food-menu-card" data-category="mutton" data-keywords="mutton malvani half 3 pcs spicy coastal gravy">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_malvani.png" alt="Mutton Malvani (Half - 3 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Malvani (Half - 3 Pcs)</h3>
+                    <span class="bengali-title">মাটন মালভানি (হাফ - ৩ পিস)</span>
+                    <span class="food-price">&#8377;329</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Malvani%20(Half%20-%203%20Pcs)%20(%E2%82%B9329)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 53. Mutton Malvani (Full - 6 Pcs) -->
+            <div class="food-menu-card" data-category="mutton" data-keywords="mutton malvani full 6 pcs malvan style mutton">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_malvani.png" alt="Mutton Malvani (Full - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Malvani (Full - 6 Pcs)</h3>
+                    <span class="bengali-title">মাটন মালভানি (ফুল - ৬ পিস)</span>
+                    <span class="food-price">&#8377;649</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Malvani%20(Full%20-%206%20Pcs)%20(%E2%82%B9649)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 54. Mutton Kosha (Half - 2 Pcs) -->
+            <div class="food-menu-card" data-category="mutton" data-keywords="mutton kosha half 2 pcs bengali mangsher jhol kosha">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_kosha.png" alt="Mutton Kosha (Half - 2 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Kosha (Half - 2 Pcs)</h3>
+                    <span class="bengali-title">মাটন কষা (হাফ - ২ পিস)</span>
+                    <span class="food-price">&#8377;199</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Kosha%20(Half%20-%202%20Pcs)%20(%E2%82%B9199)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 55. Mutton Kosha (Full - 4 Pcs) -->
+            <div class="food-menu-card" data-category="mutton" data-keywords="mutton kosha full 4 pcs rich spicy mutton kosha">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_kosha.png" alt="Mutton Kosha (Full - 4 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Kosha (Full - 4 Pcs)</h3>
+                    <span class="bengali-title">মাটন কষা (ফুল - ৪ পিস)</span>
+                    <span class="food-price">&#8377;389</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Kosha%20(Full%20-%204%20Pcs)%20(%E2%82%B9389)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 56. Chicken Handi (Half - 6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken handi half 6 pcs rich gravy handi chicken">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_handi.png" alt="Chicken Handi (Half - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Handi (Half - 6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন হান্ডি (হাফ - ৬ পিস)</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Handi%20(Half%20-%206%20Pcs)%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 57. Chicken Handi (Full - 12 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken handi full 12 pcs party pack">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_handi.png" alt="Chicken Handi (Full - 12 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Handi (Full - 12 Pcs)</h3>
+                    <span class="bengali-title">চিকেন হান্ডি (ফুল - ১২ পিস)</span>
+                    <span class="food-price">&#8377;399</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Handi%20(Full%20-%2012%20Pcs)%20(%E2%82%B9399)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 58. Chicken Maharaja Sweet (Half - 6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken maharaja sweet half 6 pcs royal creamy">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_maharaja_sweet.png" alt="Chicken Maharaja Sweet (Half - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Maharaja Sweet (Half - 6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন মহারাজা - মিষ্টি (হাফ)</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Maharaja%20Sweet%20(Half%20-%206%20Pcs)%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 59. Chicken Maharaja Sweet (Full - 12 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken maharaja sweet full 12 pcs royal rich">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_maharaja_sweet.png" alt="Chicken Maharaja Sweet (Full - 12 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Maharaja Sweet (Full - 12 Pcs)</h3>
+                    <span class="bengali-title">চিকেন মহারাজা - মিষ্টি (ফুল)</span>
+                    <span class="food-price">&#8377;399</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Maharaja%20Sweet%20(Full%20-%2012%20Pcs)%20(%E2%82%B9399)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 60. Chicken Maharaja Spicy (Half - 6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken maharaja spicy half 6 pcs hot royal">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_maharaja_spicy.png" alt="Chicken Maharaja Spicy (Half - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Maharaja Spicy (Half - 6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন মহারাজা - ঝাল (হাফ)</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Maharaja%20Spicy%20(Half%20-%206%20Pcs)%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 61. Chicken Maharaja Spicy (Full - 12 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken maharaja spicy full 12 pcs">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_maharaja_spicy.png" alt="Chicken Maharaja Spicy (Full - 12 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Maharaja Spicy (Full - 12 Pcs)</h3>
+                    <span class="bengali-title">চিকেন মহারাজা - ঝাল (ফুল)</span>
+                    <span class="food-price">&#8377;399</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Maharaja%20Spicy%20(Full%20-%2012%20Pcs)%20(%E2%82%B9399)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 62. Chicken Malvani (Half - 6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken malvani half 6 pcs coastal maharashtrian">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_malvani.png" alt="Chicken Malvani (Half - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Malvani (Half - 6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন মালভানি (হাফ - ৬ পিস)</span>
+                    <span class="food-price">&#8377;249</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Malvani%20(Half%20-%206%20Pcs)%20(%E2%82%B9249)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 63. Chicken Malvani (Full - 12 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken malvani full 12 pcs">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_malvani.png" alt="Chicken Malvani (Full - 12 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Malvani (Full - 12 Pcs)</h3>
+                    <span class="bengali-title">চিকেন মালভানি (ফুল - ১২ পিস)</span>
+                    <span class="food-price">&#8377;449</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Malvani%20(Full%20-%2012%20Pcs)%20(%E2%82%B9449)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 64. Kadai Chicken (6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="kadai chicken 6 pcs capsicum onion wok gravy">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_kadai_chicken.png" alt="Kadai Chicken (6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Kadai Chicken (6 Pcs)</h3>
+                    <span class="bengali-title">কড়াই চিকেন (৬ পিস)</span>
+                    <span class="food-price">&#8377;199</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Kadai%20Chicken%20(6%20Pcs)%20(%E2%82%B9199)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 65. Chicken Do Pyaza (6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken do payaja do pyaza 6 pcs onion gravy">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_do_pyaza.png" alt="Chicken Do Pyaza (6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Do Pyaza (6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন দো পেঁয়াজা (৬ পিস)</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Do%20Pyaza%20(6%20Pcs)%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 66. Chicken Patiyala -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken patiyala punjabi omelette chicken rich gravy">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_patiyala.png" alt="Chicken Patiyala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Patiyala</h3>
+                    <span class="bengali-title">চিকেন পাতিয়ালা</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Patiyala%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 67. Chicken Keema -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken keema minced chicken spicy curry">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_keema.png" alt="Chicken Keema" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Keema</h3>
+                    <span class="bengali-title">চিকেন কিমা</span>
+                    <span class="food-price">&#8377;199</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Keema%20(%E2%82%B9199)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 68. Tandoori Butter Chicken Masala (1 Pc) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="tanduri butter chicken masala 1 pc butter gravy">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_tandoori_butter_chicken_masala.png" alt="Tandoori Butter Chicken Masala (1 Pc)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Tandoori Butter Chicken Masala (1 Pc)</h3>
+                    <span class="bengali-title">তন্দুরি বাটার চিকেন মশলা</span>
+                    <span class="food-price">&#8377;249</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Tandoori%20Butter%20Chicken%20Masala%20(1%20Pc)%20(%E2%82%B9249)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 69. Chicken Kosha (Half - 3 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken kosha half 3 pcs bengali chicken kosha">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_kosha.png" alt="Chicken Kosha (Half - 3 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Kosha (Half - 3 Pcs)</h3>
+                    <span class="bengali-title">চিকেন কষা (হাফ - ৩ পিস)</span>
+                    <span class="food-price">&#8377;139</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Kosha%20(Half%20-%203%20Pcs)%20(%E2%82%B9139)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 70. Chicken Kosha (Full - 6 Pcs) -->
+            <div class="food-menu-card" data-category="chicken" data-keywords="chicken kosha full 6 pcs spicy thick gravy">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_kosha.png" alt="Chicken Kosha (Full - 6 Pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Kosha (Full - 6 Pcs)</h3>
+                    <span class="bengali-title">চিকেন কষা (ফুল - ৬ পিস)</span>
+                    <span class="food-price">&#8377;269</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Kosha%20(Full%20-%206%20Pcs)%20(%E2%82%B9269)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 71. Paneer Masala -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="paneer masala spicy cottage cheese curry">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_masala.png" alt="Paneer Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Masala</h3>
+                    <span class="bengali-title">পনির মশলা</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Masala%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 72. Paneer Tikka Masala -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="panner tikka masala grilled paneer smoky gravy">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_tikka_masala.png" alt="Paneer Tikka Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Tikka Masala</h3>
+                    <span class="bengali-title">পনির টিক্কা মশলা</span>
+                    <span class="food-price">&#8377;199</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Tikka%20Masala%20(%E2%82%B9199)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 73. Paneer Butter Masala -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="panner butter masala makhani gravy butter paneer">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_butter_masala.png" alt="Paneer Butter Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Butter Masala</h3>
+                    <span class="bengali-title">পনির বাটার মশলা</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Butter%20Masala%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 74. Shahi Paneer -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="sahi panner royal cashew cream white yellow gravy">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_shahi_paneer.png" alt="Shahi Paneer" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Shahi Paneer</h3>
+                    <span class="bengali-title">শাহি পনির</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Shahi%20Paneer%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 75. Kaju Paneer Masala -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="kaju paneer masala crunchy cashews rich paneer">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_kaju_paneer_masala.png" alt="Kaju Paneer Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Kaju Paneer Masala</h3>
+                    <span class="bengali-title">কাজু পনির মশলা</span>
+                    <span class="food-price">&#8377;219</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Kaju%20Paneer%20Masala%20(%E2%82%B9219)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 76. Paneer Patiyala -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="panner patiyala punjabi style stuffed paneer">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_patiyala.png" alt="Paneer Patiyala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Patiyala</h3>
+                    <span class="bengali-title">পনির পাতিয়ালা</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Patiyala%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 77. Paneer Angara -->
+            <div class="food-menu-card" data-category="paneer" data-keywords="panner angara charcoal smoked fiery spicy paneer">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_paneer_angara.png" alt="Paneer Angara" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Angara</h3>
+                    <span class="bengali-title">পনির অঙ্গারা</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Paneer%20Angara%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 78. Veg Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="veg thali rice dal sabji bhaja chutney papad">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_veg_thali.png" alt="Veg Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Thali</h3>
+                    <span class="bengali-title">ভেজ থালি</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Veg%20Thali%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 79. Egg Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="egg thali dimer dalna rice dal papad thali">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_egg_thali.png" alt="Egg Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Thali</h3>
+                    <span class="bengali-title">এগ থালি</span>
+                    <span class="food-price">&#8377;129</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Egg%20Thali%20(%E2%82%B9129)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 80. Chicken Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="chicken thali murgir mangsho rice dal sabji thali">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_thali.png" alt="Chicken Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Thali</h3>
+                    <span class="bengali-title">চিকেন থালি</span>
+                    <span class="food-price">&#8377;169</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Thali%20(%E2%82%B9169)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 81. Katla Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="katla thali fresh katla fish curry rice thali">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_katla_thali.png" alt="Katla Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Katla Thali</h3>
+                    <span class="bengali-title">কাতলা মাছের থালি</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Katla%20Thali%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 82. Pabda Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="pabda thali shorshe pabda fish thali">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_pabda_thali.png" alt="Pabda Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Pabda Thali</h3>
+                    <span class="bengali-title">পাবদা মাছের থালি</span>
+                    <span class="food-price">&#8377;199</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Pabda%20Thali%20(%E2%82%B9199)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 83. Mutton Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="mutton thali khashir mangsho bengali thali">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mutton_thali.png" alt="Mutton Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Thali</h3>
+                    <span class="bengali-title">মাটন থালি</span>
+                    <span class="food-price">&#8377;279</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mutton%20Thali%20(%E2%82%B9279)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 84. Basanti Pulao with Aloo Dom -->
+            <div class="food-menu-card" data-category="combos" data-keywords="pulao with aloo dom basanti pulao combo">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_basanti_pulao_aloo_dom.png" alt="Basanti Pulao with Aloo Dom" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Basanti Pulao with Aloo Dom</h3>
+                    <span class="bengali-title">বাসন্তী পোলাও সাথে আলুর দম</span>
+                    <span class="food-price">&#8377;119</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Basanti%20Pulao%20with%20Aloo%20Dom%20(%E2%82%B9119)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 85. Basanti Pulao with Paneer -->
+            <div class="food-menu-card" data-category="combos" data-keywords="pulao with paneer rich gravy paneer combo">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_basanti_pulao_paneer.png" alt="Basanti Pulao with Paneer" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Basanti Pulao with Paneer</h3>
+                    <span class="bengali-title">বাসন্তী পোলাও সাথে পনির</span>
+                    <span class="food-price">&#8377;159</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Basanti%20Pulao%20with%20Paneer%20(%E2%82%B9159)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 86. Basanti Pulao with Chicken Kosha -->
+            <div class="food-menu-card" data-category="combos" data-keywords="pulao with chicken kosha bengali festive combo">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_basanti_pulao_chicken_kosha.png" alt="Basanti Pulao with Chicken Kosha" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Basanti Pulao with Chicken Kosha</h3>
+                    <span class="bengali-title">বাসন্তী পোলাও সাথে চিকেন কষা</span>
+                    <span class="food-price">&#8377;169</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Basanti%20Pulao%20with%20Chicken%20Kosha%20(%E2%82%B9169)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 87. Basanti Pulao with Mutton Kosha -->
+            <div class="food-menu-card" data-category="combos" data-keywords="pulao with mutton kosha royal feast combo">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_basanti_pulao_mutton_kosha.png" alt="Basanti Pulao with Mutton Kosha" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Basanti Pulao with Mutton Kosha</h3>
+                    <span class="bengali-title">বাসন্তী পোলাও সাথে মাটন কষা</span>
+                    <span class="food-price">&#8377;279</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Basanti%20Pulao%20with%20Mutton%20Kosha%20(%E2%82%B9279)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 88. Triple Schezwan Fried Rice -->
+            <div class="food-menu-card" data-category="combos" data-keywords="triple sz fried rice chinese combo rice noodles gravy">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_triple_schezwan_fried_rice.png" alt="Triple Schezwan Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Triple Schezwan Fried Rice</h3>
+                    <span class="bengali-title">ট্রিপল সেজুয়ান ফ্রায়েড রাইস</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Triple%20Schezwan%20Fried%20Rice%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 89. Veg Hakka Noodles -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="veg hakka noodles fresh tossed vegetables">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_veg_hakka_noodles.png" alt="Veg Hakka Noodles" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Hakka Noodles</h3>
+                    <span class="bengali-title">ভেজ হাক্কা নুডুলস</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Veg%20Hakka%20Noodles%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 90. Egg Hakka Noodles -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="egg hakka noodles scrambled eggs wok noodles">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_egg_hakka_noodles.png" alt="Egg Hakka Noodles" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Hakka Noodles</h3>
+                    <span class="bengali-title">এগ হাক্কা নুডুলস</span>
+                    <span class="food-price">&#8377;129</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Egg%20Hakka%20Noodles%20(%E2%82%B9129)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 91. Chicken Hakka Noodles -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="chicken hakka noodles shredded chicken noodles">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_hakka_noodles.png" alt="Chicken Hakka Noodles" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Hakka Noodles</h3>
+                    <span class="bengali-title">চিকেন হাক্কা নুডুলস</span>
+                    <span class="food-price">&#8377;139</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Hakka%20Noodles%20(%E2%82%B9139)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 92. Chicken Chilli Garlic Noodles -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="chicken chilli garlic noodles spicy garlic flavor">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_chilli_garlic_noodles.png" alt="Chicken Chilli Garlic Noodles" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Chilli Garlic Noodles</h3>
+                    <span class="bengali-title">চিকেন চিলি গার্লিক নুডুলস</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Chilli%20Garlic%20Noodles%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 93. Mix Hakka Noodles -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="mix hakka noodles chicken egg veg mixed">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mix_hakka_noodles.png" alt="Mix Hakka Noodles" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mix Hakka Noodles</h3>
+                    <span class="bengali-title">মিক্স হাক্কা নুডুলস</span>
+                    <span class="food-price">&#8377;169</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mix%20Hakka%20Noodles%20(%E2%82%B9169)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 94. Egg Mutton Hakka Noodles -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="egg mutton hakka noodles tender mutton pieces">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_egg_mutton_hakka_noodles.png" alt="Egg Mutton Hakka Noodles" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Mutton Hakka Noodles</h3>
+                    <span class="bengali-title">এগ মাটন হাক্কা নুডুলস</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Egg%20Mutton%20Hakka%20Noodles%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 95. Hongkong Chicken Gravy -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="hongkong chicken gravy side dish chinese">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_hongkong_chicken_gravy.png" alt="Hongkong Chicken Gravy" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Hongkong Chicken Gravy</h3>
+                    <span class="bengali-title">হংকং চিকেন গ্রেভি</span>
+                    <span class="food-price">&#8377;209</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Hongkong%20Chicken%20Gravy%20(%E2%82%B9209)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 96. Chilli Chicken Gravy -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="chilli chicken gravy classic spicy chinese gravy">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_chicken_gravy.png" alt="Chilli Chicken Gravy" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Chicken Gravy</h3>
+                    <span class="bengali-title">চিলি চিকেন গ্রেভি</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Chicken%20Gravy%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 97. Chicken Hot Garlic Sauce -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="chicken hot garlic sauce tangy fiery gravy">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chicken_hot_garlic_sauce.png" alt="Chicken Hot Garlic Sauce" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Hot Garlic Sauce</h3>
+                    <span class="bengali-title">চিকেন হট গার্লিক সস</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chicken%20Hot%20Garlic%20Sauce%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 98. Chilli Paneer Gravy -->
+            <div class="food-menu-card" data-category="chinese" data-keywords="chilli paneer grevy gravy cottage cheese in sauce">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_paneer_gravy.png" alt="Chilli Paneer Gravy" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Paneer Gravy</h3>
+                    <span class="bengali-title">চিলি পনির গ্রেভি</span>
+                    <span class="food-price">&#8377;179</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Paneer%20Gravy%20(%E2%82%B9179)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 99. Sizzling Brownie -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="sizzling brownie hot brownie vanilla ice cream chocolate sauce">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_sizzling_brownie.png" alt="Sizzling Brownie" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Sizzling Brownie</h3>
+                    <span class="bengali-title">সিজলিং ব্রাউনি</span>
+                    <span class="food-price">&#8377;119</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Sizzling%20Brownie%20(%E2%82%B9119)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 100. Mix Ice Cream -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="mix ice cream assorted scoops sundae">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_mix_ice_cream.png" alt="Mix Ice Cream" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mix Ice Cream</h3>
+                    <span class="bengali-title">মিক্স আইসক্রিম</span>
+                    <span class="food-price">&#8377;149</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mix%20Ice%20Cream%20(%E2%82%B9149)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 101. Nolen Gur Ice Cream -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="nolen gur bengali date palm jaggery ice cream">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_nolen_gur_ice_cream.png" alt="Nolen Gur Ice Cream" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Nolen Gur Ice Cream</h3>
+                    <span class="bengali-title">নলেন গুড় আইসক্রিম</span>
+                    <span class="food-price">&#8377;60</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Nolen%20Gur%20Ice%20Cream%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 102. Butterscotch Ice Cream -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="butter scotch crunchy praline sweet">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_butter_scotch_ice_cream.png" alt="Butterscotch Ice Cream" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Butterscotch Ice Cream</h3>
+                    <span class="bengali-title">বাটারস্কচ আইসক্রিম</span>
+                    <span class="food-price">&#8377;60</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Butterscotch%20Ice%20Cream%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 103. Chocolate Ice Cream -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="chocolate ice cream rich cocoa scoop">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chocolate_ice_cream.png" alt="Chocolate Ice Cream" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chocolate Ice Cream</h3>
+                    <span class="bengali-title">চকোলেট আইসক্রিম</span>
+                    <span class="food-price">&#8377;60</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chocolate%20Ice%20Cream%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 104. Vanilla Ice Cream -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="vennila ice cream vanilla classic">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_vanilla_ice_cream.png" alt="Vanilla Ice Cream" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Vanilla Ice Cream</h3>
+                    <span class="bengali-title">ভ্যানিলা আইসক্রিম</span>
+                    <span class="food-price">&#8377;60</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Vanilla%20Ice%20Cream%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 105. Rabri Ice Cream -->
+            <div class="food-menu-card" data-category="dessert" data-keywords="rabri ice cream rich creamy traditional">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_rabri_ice_cream.png" alt="Rabri Ice Cream" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Rabri Ice Cream</h3>
+                    <span class="bengali-title">রাবড়ি আইসক্রিম</span>
+                    <span class="food-price">&#8377;60</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Rabri%20Ice%20Cream%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 106. Cola -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="cola chilled soft drink refreshment">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_cola.png" alt="Cola" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Cola</h3>
+                    <span class="bengali-title">কোল্ড কোলা</span>
+                    <span class="food-price">&#8377;40</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Cola%20(%E2%82%B940)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 107. Lime Soda -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="line soda fresh lime soda sweet salt">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_lime_soda.png" alt="Lime Soda" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Lime Soda</h3>
+                    <span class="bengali-title">লাইম সোডা</span>
+                    <span class="food-price">&#8377;49</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Lime%20Soda%20(%E2%82%B949)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 108. Chilli Mango Mocktail -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="chilli mango spicy mango mocktail">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_chilli_mango.png" alt="Chilli Mango Mocktail" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Mango Mocktail</h3>
+                    <span class="bengali-title">চিলি ম্যাঙ্গো মকটেল</span>
+                    <span class="food-price">&#8377;59</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Chilli%20Mango%20Mocktail%20(%E2%82%B959)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 109. Masala Cola -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="masala cola chatpata fizz spicy soda">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_masala_cola.png" alt="Masala Cola" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Masala Cola</h3>
+                    <span class="bengali-title">মশলা কোলা</span>
+                    <span class="food-price">&#8377;59</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Masala%20Cola%20(%E2%82%B959)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 110. Blue Lagoon -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="blue legon curacao citrus refresher mocktail">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_blue_lagoon.png" alt="Blue Lagoon" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Blue Lagoon</h3>
+                    <span class="bengali-title">ব্লু লেগুন</span>
+                    <span class="food-price">&#8377;59</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Blue%20Lagoon%20(%E2%82%B959)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 111. Mint Lagoon -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="mint legon refreshing mint cooler">
+    <div class="food-card-img-box">
+                    <img src="assets/menu_mint_lagoon.png" alt="Mint Lagoon" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mint Lagoon</h3>
+                    <span class="bengali-title">মিন্ট লেগুন</span>
+                    <span class="food-price">&#8377;69</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Mint%20Lagoon%20(%E2%82%B969)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 112. Virgin Mojito -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="virgin mojito mint lemon soda crush">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_virgin_mojito.png" alt="Virgin Mojito" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Virgin Mojito</h3>
+                    <span class="bengali-title">ভার্জিন মোহিতো</span>
+                    <span class="food-price">&#8377;69</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Virgin%20Mojito%20(%E2%82%B969)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 113. Lassi -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="lassi sweet punjabi curd drink">
+                <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_lassi.png" alt="Lassi" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Lassi</h3>
+                    <span class="bengali-title">স্পেশাল লস্যি</span>
+                    <span class="food-price">&#8377;89</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Lassi%20(%E2%82%B989)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 114. Cold Coffee -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="cold coffee thick chilled coffee ice cream">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_cold_coffee.png" alt="Cold Coffee" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Cold Coffee</h3>
+                    <span class="bengali-title">কোল্ড কফি</span>
+                    <span class="food-price">&#8377;99</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Cold%20Coffee%20(%E2%82%B999)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 115. Purple Valley -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="purple valley signature berry mocktail">
+                <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box">
+                    <img src="assets/menu_purple_valley.png" alt="Purple Valley" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Purple Valley</h3>
+                    <span class="bengali-title">পার্পল ভ্যালি স্পেশাল</span>
+                    <span class="food-price">&#8377;109</span>
+                    <a href="https://wa.me/918515860417?text=Hi%20AFTER%20SUNSET,%20I%20want%20to%20order%20Purple%20Valley%20(%E2%82%B9109)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- No Results Fallback -->
+        <div id="no-results-msg">
+            <i class="fas fa-search" style="font-size: 2.5rem; margin-bottom: 12px; display: block;"></i>
+            <p>আপনার খোঁজা অনুযায়ী কোনো খাবার পাওয়া যায়নি। অন্য কিছু লিখে খুঁজুন।</p>
+        </div>
+    </main>
+
+    <!-- Order Timings Banner -->
+    <div id="order-timings" style="max-width: 1200px; margin: 0 auto 60px; padding: 0 15px; scroll-margin-top: 170px;">
+        <div class="order-info-banner glassmorphism">
+            <div class="order-timing-card">
+                <div class="timing-icon"><i class="fas fa-clock"></i></div>
+                <div class="timing-details">
+                    <h4>⏰ Order Timings (অর্ডার সময়সূচী)</h4>
+                    <ul>
+                        <li><strong>☀️ Lunch:</strong> Any Time You're Hungry!</li>
+                        <li><strong>🌙 Dinner:</strong> Order 05:00 PM – 06:30 PM <span class="serve-time">(Serve: 9:30 PM – 10:00 PM)</span></li>
+                        <li><strong>🌅 Breakfast:</strong> Pre-order 09:00 PM – 10:00 PM <span class="serve-time">(Serve Next Morning: 8:30 AM)</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="order-call-box">
+                <div class="call-badge">Direct Hotline</div>
+                <h3>Call or WhatsApp to Place Order</h3>
+                <a href="tel:6295982636" class="order-phone-link">
+                    <i class="fas fa-phone-volume"></i> 6295982636
+                </a>
+                <div class="quick-action-btns">
+                    <a href="tel:6295982636" class="direct-call-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/918515860417?text=Hello%20AJ%20Restaurant,%20I%20want%20to%20place%20an%20order!" target="_blank" class="direct-wp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Order
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Direct WhatsApp Button -->
+    <a href="https://wa.me/918515860417?text=Hello%20AJ%20Restaurant,%20I%20want%20to%20order%20food!" target="_blank" class="floating-order-btn" title="Direct WhatsApp Order">
+        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> <span>Order on WhatsApp</span>
+    </a>
+
+    <!-- JavaScript for Live Search & Category Filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('menu-search-input');
+            const categoryTabs = document.querySelectorAll('.menu-tab-btn');
+            const foodCards = document.querySelectorAll('.food-menu-card');
+            const noResultsMsg = document.getElementById('no-results-msg');
+
+            let activeCategory = 'all';
+
+            function filterMenu() {
+                const query = searchInput.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                foodCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const keywords = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
+
+                    const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+                    const matchesSearch = query === '' || keywords.includes(query);
+
+                    if (matchesCategory && matchesSearch) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    noResultsMsg.style.display = 'block';
+                } else {
+                    noResultsMsg.style.display = 'none';
+                }
+            }
+
+            // Category Tab Clicks
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    activeCategory = tab.getAttribute('data-category');
+                    const tabsContainer = tab.closest('.menu-category-tabs');
+                    if (tabsContainer) {
+                        const targetScroll = tab.offsetLeft - (tabsContainer.clientWidth / 2) + (tab.offsetWidth / 2);
+                        tabsContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                    }
+                    filterMenu();
+                });
+            });
+
+            // Search Input Live Filter
+            searchInput.addEventListener('input', () => {
+                filterMenu();
+            });
+
+            // ============================================================
+            // TWO-WAY TOGGLE SCROLL (Click to go to Timings, Click again to go to Top)
+            // ============================================================
+            const timingToggleBtn = document.getElementById('nav-timing-toggle-btn');
+            const timingIcon = document.getElementById('nav-timing-icon');
+            const timingText = document.getElementById('nav-timing-text');
+            const orderTimingsSection = document.getElementById('order-timings');
+
+            function isNearTimingsSection() {
+                if (!orderTimingsSection) return false;
+                const rect = orderTimingsSection.getBoundingClientRect();
+                return rect.top <= window.innerHeight * 0.75;
+            }
+
+            if (timingToggleBtn && orderTimingsSection) {
+                timingToggleBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (isNearTimingsSection()) {
+                        // If already at Timings section -> Smoothly scroll back to TOP
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Smoothly scroll DOWN to Order Timings section
+                        orderTimingsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+
+                // Dynamically update button icon/text when user scrolls near timings
+                window.addEventListener('scroll', () => {
+                    if (isNearTimingsSection()) {
+                        timingToggleBtn.classList.add('at-bottom');
+                        if (timingIcon) timingIcon.className = 'fas fa-arrow-up';
+                        if (timingText) timingText.innerText = 'Top';
+                        timingToggleBtn.title = 'Scroll back to Top (উপরে ফিরে যান)';
+                    } else {
+                        timingToggleBtn.classList.remove('at-bottom');
+                        if (timingIcon) timingIcon.className = 'fas fa-clock';
+                        if (timingText) timingText.innerText = 'Timings';
+                        timingToggleBtn.title = 'Order Timings (অর্ডার সময়সূচী)';
+                    }
+                }, { passive: true });
+            }
+        });
+    </script>
+</body>
+</html>
