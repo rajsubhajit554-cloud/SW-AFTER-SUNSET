@@ -3263,15 +3263,15 @@ footer p {
 
 /* Compact Floating Food Menu Card (Pure Light Theme) */
 .food-menu-card {
-    flex: 0 0 185px;
+    flex: 0 0 170px;
     scroll-snap-align: start;
     background: var(--bg-card) !important;
     border: 1.5px solid var(--glass-border) !important;
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 12px;
+    padding: 8px 9px 10px;
     text-align: center;
     box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07) !important;
     backdrop-filter: blur(12px);
@@ -3346,10 +3346,10 @@ footer p {
 
 .food-card-img-box {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     border: 1px solid var(--glass-border) !important;
     background: radial-gradient(circle at center, rgba(201, 162, 75, 0.08) 0%, rgba(24, 20, 14, 0.85) 100%) !important;
     position: relative;
@@ -3387,30 +3387,30 @@ footer p {
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 4px;
+    gap: 2px;
 }
 
 .food-title {
-    font-size: 0.98rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--text-primary) !important;
-    line-height: 1.25;
+    line-height: 1.2;
     font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 .bengali-title {
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     color: var(--accent-gold) !important;
     font-weight: 600;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     display: block;
 }
 
 .food-price {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 800;
     color: var(--accent-red, #c0392b) !important;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .food-order-btn {
@@ -3421,10 +3421,10 @@ footer p {
     background: linear-gradient(135deg, #25D366, #128C7E) !important;
     color: #ffffff !important;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
-    padding: 7px 12px;
-    border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 6px;
     width: 100%;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
@@ -3476,33 +3476,37 @@ footer p {
     }
 
     .food-menu-card {
-        flex: 0 0 148px;
-        padding: 9px;
-        border-radius: 14px;
+        flex: 0 0 138px;
+        padding: 6px 7px 8px;
+        border-radius: 12px;
+    }
+
+    .food-card-img-box {
+        aspect-ratio: 4 / 3;
+        margin-bottom: 4px;
+        border-radius: 8px;
     }
 
     .food-title {
-        font-size: 0.88rem;
+        font-size: 0.8rem;
+        line-height: 1.18;
     }
 
     .bengali-title {
-        font-size: 0.74rem;
+        font-size: 0.68rem;
+        margin-bottom: 1px;
     }
 
     .food-price {
-        font-size: 0.98rem;
+        font-size: 0.88rem;
+        margin-bottom: 2px;
     }
 
     .food-order-btn {
-        padding: 6px 8px;
-        font-size: 0.74rem;
+        padding: 4px 6px;
+        font-size: 0.68rem;
     }
 }
-
-/* Shimmer ray sweep across button */
-}
-
-@media (max-width: 600px) {}
 
 /* ---- Optimized Compact Gap for Customer Reviews Photo Gallery ---- */
 .reviews-section {
