@@ -2326,54 +2326,132 @@
 
                 <!-- Search Bar & Category Filter Tabs -->
                 <div class="menu-control-bar">
+                    
+
+                    <!-- Modal Category Filter Dropdown (Three-Dot Filter Menu) -->
+                    <div class="menu-filter-dropdown-wrapper" id="modal-menu-filter-dropdown-wrapper">
+            <button type="button" class="menu-filter-dots-btn" id="modal-menu-filter-dots-btn" aria-expanded="false"
+                aria-haspopup="true" title="Filter Menu">
+                <span class="three-dots-icon-box">
+                    <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <span class="current-filter-label" id="modal-current-filter-label">
+                    <i class="fas fa-utensils"></i>
+                    <span>All Items</span>
+                </span>
+                <i class="fas fa-chevron-down filter-dropdown-arrow"></i>
+            </button>
+
+            <!-- Dropdown List of Category Filter Options -->
+            <div class="menu-filter-dropdown-menu" id="modal-menu-filter-dropdown-menu">
+                <div class="menu-filter-dropdown-header">
+                    <span><i class="fas fa-filter"></i> Filter Category</span>
+                </div>
+                <div class="menu-filter-dropdown-list">
+                    <button type="button" class="menu-tab-btn active" data-category="all">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-utensils tab-icon"></i>
+                            <span class="tab-title">All Items</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="snacks">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-drumstick-bite tab-icon"></i>
+                            <span class="tab-title">Snacks & Starters</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="thali">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-bowl-rice tab-icon"></i>
+                            <span class="tab-title">Bengali Thali</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="rice">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-bowl-food tab-icon"></i>
+                            <span class="tab-title">Rice & Biryani</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="chicken">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-drumstick-bite tab-icon"></i>
+                            <span class="tab-title">Indian Chicken</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="mutton">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-bacon tab-icon"></i>
+                            <span class="tab-title">Indian Mutton</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="fish">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-fish tab-icon"></i>
+                            <span class="tab-title">Fish Items</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="paneer">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-cheese tab-icon"></i>
+                            <span class="tab-title">Paneer Dishes</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="tandoor">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-fire tab-icon"></i>
+                            <span class="tab-title">Tandoor & Roti</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="combos">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-boxes-stacked tab-icon"></i>
+                            <span class="tab-title">Special Combos</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="chinese">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-bowl-food tab-icon"></i>
+                            <span class="tab-title">Chinese & Noodles</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="dessert">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-ice-cream tab-icon"></i>
+                            <span class="tab-title">Ice Cream & Desserts</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="beverages">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-cocktail tab-icon"></i>
+                            <span class="tab-title">Mocktails & Drinks</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                </div>
+            </div>
+                </div>
+
                     <div class="search-box-wrapper">
                         <i class="fas fa-search"></i>
                         <input type="text" id="modal-menu-search-input"
                             placeholder="খাবারের নাম লিখে খুঁজুন (Search dishes...)" autocomplete="off">
-                    </div>
-
-                    <div class="menu-category-tabs" id="modal-menu-category-tabs">
-                        <button class="menu-tab-btn active" data-category="all">
-                            <i class="fas fa-utensils"></i> All Items
-                        </button>
-                        <button class="menu-tab-btn" data-category="snacks">
-                            <i class="fas fa-drumstick-bite"></i> Snacks & Starters
-                        </button>
-                        <button class="menu-tab-btn" data-category="thali">
-                            <i class="fas fa-bowl-rice"></i> Bengali Thali
-                        </button>
-                        <button class="menu-tab-btn" data-category="rice">
-                            <i class="fas fa-bowl-food"></i> Rice & Biryani
-                        </button>
-                        <button class="menu-tab-btn" data-category="chicken">
-                            <i class="fas fa-drumstick-bite"></i> Indian Chicken
-                        </button>
-                        <button class="menu-tab-btn" data-category="mutton">
-                            <i class="fas fa-bacon"></i> Indian Mutton
-                        </button>
-                        <button class="menu-tab-btn" data-category="fish">
-                            <i class="fas fa-fish"></i> Fish Items
-                        </button>
-                        <button class="menu-tab-btn" data-category="paneer">
-                            <i class="fas fa-cheese"></i> Paneer Dishes
-                        </button>
-                        <button class="menu-tab-btn" data-category="tandoor">
-                            <i class="fas fa-fire"></i> Tandoor & Roti
-                        </button>
-                        <button class="menu-tab-btn" data-category="combos">
-                            <i class="fas fa-boxes-stacked"></i> Special Combos
-                        </button>
-                        <button class="menu-tab-btn" data-category="chinese">
-                            <i class="fas fa-bowl-food"></i> Chinese & Noodles
-                        </button>
-                        <button class="menu-tab-btn" data-category="dessert">
-                            <i class="fas fa-ice-cream"></i> Ice Cream & Desserts
-                        </button>
-                        <button class="menu-tab-btn" data-category="beverages">
-                            <i class="fas fa-cocktail"></i> Mocktails & Drinks
+                        <button type="button" id="modal-menu-search-clear" class="search-clear-btn" aria-label="Clear search" title="à¦®à§à¦›à§‡ à¦«à§‡à¦²à§à¦¨ (Clear)">
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
-                </div>
+            </div>
             </div>
 
             <div class="full-menu-modal-body">
